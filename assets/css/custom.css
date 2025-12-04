@@ -1,0 +1,499 @@
+/* Typography */
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Spacing Scale (8–16–24–32) */
+.section {
+  padding: 32px 0;
+}
+
+.section-title {
+  margin-bottom: 24px;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+/* Links and Buttons */
+a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background-color: #66b3ff;
+  border: none;
+  padding: 12px 24px;
+}
+
+.btn-primary:hover {
+  background-color: #1e90ff;
+}
+
+.btn-outline {
+  border: 2px solid #66b3ff;
+  padding: 10px 22px;
+  color: #66b3ff;
+}
+
+.btn-outline:hover {
+  background-color: #66b3ff;
+  color: #000;
+}
+
+/* Styled List */
+.styled-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.styled-list li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  color: #ffffff;
+}
+
+.styled-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #66b3ff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Component 1: Navbar */
+.header {
+  background-color: #111;
+  padding: 20px 0;
+}
+
+.navmenu a {
+  color: #cccccc;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  color: #66b3ff;
+}
+
+/* Component 2: Back-to-top button */
+#scroll-top {
+  background: #66b3ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#scroll-top:hover {
+  background: #1e90ff;
+}
+
+/* Skills Section Text Improvements */
+#skills h2 {
+  color: #ffffff;
+}
+
+#skills p {
+  color: #d0d0d0;
+}
+
+/* ========================================
+   REQUIRED: CSS ANIMATIONS (Task #3)
+   ======================================== */
+
+/* Animation 1: Fade-in for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to any element with fade-in class */
+.fade-in,
+.section-title,
+#skills h2,
+#resume h2,
+#portfolio h2,
+#contact h2,
+#about h2,
+#services h2,
+#testimonials h2 {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animation 2: Pulse effect on buttons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-primary:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* ========================================
+   REQUIRED: CSS-ONLY LOADER (Task #4)
+   ======================================== */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   REQUIRED: ACCESSIBILITY (Task #5)
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Form styling */
+.form-range {
+  width: 100%;
+  margin: 10px 0;
+}
+
+#formResults {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+#formResults p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+#averageRating {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+/* Make form results darker and readable */
+/* Make form results text darker and readable */
+#formResults {
+  background: #ffffff;
+  color: #222;
+}
+
+#formResults h4 {
+  color: #111;
+}
+
+#formResults p {
+  color: #333;
+  font-weight: 500;
+}
+
+#formResults strong {
+  color: #0066ff;
+}
+
+#averageRating {
+  background: #f0f0f0;
+  color: #111;
+  border: 2px solid #ddd;
+}
+
+
+/* Make rating sliders bright and visible */
+
+.form-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Slider track */
+.form-range::-webkit-slider-runnable-track {
+  background: #66b3ff;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.form-range::-moz-range-track {
+  background: #66b3ff;
+  height: 8px;
+  border-radius: 10px;
+}
+
+/* Slider thumb */
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #1e90ff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin-top: -6px;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #1e90ff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+/* --- Contact form brighter text --- */
+.contact-form label {
+  color: #ffffff !important;
+}
+
+.contact-form span {
+  color: #66b3ff !important;
+}
+
+/* input fields bright */
+.contact-form .form-control {
+  background: #2b2b2b;
+  border: 1px solid #66b3ff;
+  color: #ffffff;
+}
+
+.contact-form .form-control::placeholder {
+  color: #bfbfbf;
+}
+
+/* range slider visible */
+.contact-form .form-range {
+  accent-color: #66b3ff;
+}
+
+/* submit button brighter */
+.contact-form button {
+  background: #66b3ff;
+  color: #000;
+  font-weight: bold;
+}
+#averageRating {
+  background: #ffffff;
+  color: #000;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 15px;
+}
+.contact-form label {
+  color: #fff !important;
+}
+
+#rating1Value,
+#rating2Value,
+#rating3Value {
+  color: #00ffcc !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Memory Game - styles */
+.memory-game .memory-controls {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.memory-wrapper {
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+.stats-panel {
+  min-width:170px;
+  background: rgba(255,255,255,0.03);
+  padding:12px 16px;
+  border-radius:8px;
+  color:#fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.stats-panel .stat { margin-bottom:8px; }
+.stats-panel .stat strong { color:#ddd; }
+
+/* board */
+.memory-board {
+  display:grid;
+  gap:14px;
+  flex:1 1 600px;
+  min-height:120px;
+  justify-content:center;
+}
+
+/* two preset grid sizes; JS switches CSS grid-template-columns inline */
+.memory-board.card-easy { grid-template-columns: repeat(4, minmax(80px, 1fr)); }
+.memory-board.card-hard { grid-template-columns: repeat(6, minmax(70px, 1fr)); }
+
+/* card */
+.memory-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
+  border-radius:12px;
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  position:relative;
+  user-select:none;
+  perspective:800px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* flip inner */
+.card-inner {
+  position:relative;
+  width:100%;
+  height:100%;
+  transform-style:preserve-3d;
+  transition: transform 0.45s ease;
+  border-radius:12px;
+}
+
+/* when flipped */
+.memory-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* faces */
+.card-front, .card-back {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backface-visibility:hidden;
+  border-radius:12px;
+  font-size:34px;
+  font-weight:700;
+}
+
+/* back (hidden icon) */
+.card-back {
+  background: linear-gradient(135deg, #333 0%, #222 100%);
+  color: #fff;
+}
+
+/* front (shown after flip) */
+.card-front {
+  background: linear-gradient(135deg, #fff, #f3f3f3);
+  color: #222;
+  transform: rotateY(180deg);
+}
+
+/* matched */
+.memory-card.matched {
+  pointer-events:none;
+  opacity:0.8;
+  transform:scale(0.98);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.6);
+}
+
+/* overlay popup */
+.memory-overlay {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.45);
+  z-index:9999;
+}
+
+.memory-popup {
+  background:#fff;
+  color:#111;
+  width: min(520px, 90%);
+  padding:26px;
+  border-radius:14px;
+  text-align:center;
+}
+
+.memory-popup h3 { margin-bottom:6px; }
+.memory-popup p { margin-bottom:16px; }
+
+.memory-popup .popup-actions { display:flex; gap:12px; justify-content:center; }
+
+/* accessible reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-inner { transition:none !important; }
+}
+
+/* bright theme tweaks (for dark background sites) */
+.memory-game .card-back { background: linear-gradient(135deg,#2a2a2a,#1f1f1f); }
+.memory-game .card-front { background: linear-gradient(135deg,#ffffff,#f6f6f6); }
+
+/* responsive card size */
+@media (max-width:700px) {
+  .memory-board.card-easy { grid-template-columns: repeat(3, minmax(70px,1fr)); }
+  .memory-board.card-hard { grid-template-columns: repeat(4, minmax(64px,1fr)); }
+  .memory-card { height:84px; }
+}
